@@ -45,7 +45,7 @@ const Index = () => {
     <Container centerContent maxW="container.md" py={8}>
       <VStack spacing={4} width="100%">
         <Text fontSize="3xl" fontWeight="bold">
-          University Marketplace
+          UniBiz
         </Text>
         <HStack spacing={2} width="100%">
           <Input placeholder="Item Title" value={newItem.title} onChange={(e) => setNewItem({ ...newItem, title: e.target.value })} />
