@@ -42,28 +42,28 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" py={8}>
+    <Container centerContent maxW="container.md" py={8} bg="brand.400">
       <VStack spacing={4} width="100%">
-        <Text fontSize="3xl" fontWeight="bold">
+        <Text fontSize="3xl" fontWeight="bold" color="brand.900">
           UniBiz
         </Text>
         <HStack spacing={2} width="100%">
-          <Input placeholder="Item Title" value={newItem.title} onChange={(e) => setNewItem({ ...newItem, title: e.target.value })} />
-          <Input placeholder="Price" type="number" value={newItem.price} onChange={(e) => setNewItem({ ...newItem, price: e.target.value })} />
-          <Input placeholder="Image URL" value={newItem.image} onChange={(e) => setNewItem({ ...newItem, image: e.target.value })} />
-          <IconButton aria-label="Add Item" icon={<FaPlus />} onClick={addItem} />
+          <Input placeholder="Item Title" value={newItem.title} onChange={(e) => setNewItem({ ...newItem, title: e.target.value })} bg="brand.500" />
+          <Input placeholder="Price" type="number" value={newItem.price} onChange={(e) => setNewItem({ ...newItem, price: e.target.value })} bg="brand.500" />
+          <Input placeholder="Image URL" value={newItem.image} onChange={(e) => setNewItem({ ...newItem, image: e.target.value })} bg="brand.500" />
+          <IconButton aria-label="Add Item" icon={<FaPlus />} onClick={addItem} bg="brand.600" color="white" />
         </HStack>
         <VStack spacing={4} width="100%">
           {items.map((item, index) => (
-            <HStack key={index} spacing={4} width="100%" p={4} borderWidth={1} borderRadius="md">
+            <HStack key={index} spacing={4} width="100%" p={4} borderWidth={1} borderRadius="md" bg="brand.500">
               <Image boxSize="100px" objectFit="cover" src={item.image} alt={item.title} />
               <VStack align="start" flex="1">
-                <Text fontSize="xl" fontWeight="bold">
+                <Text fontSize="xl" fontWeight="bold" color="brand.900">
                   {item.title}
                 </Text>
-                <Text>${item.price}</Text>
+                <Text color="brand.900">${item.price}</Text>
               </VStack>
-              <IconButton aria-label="Remove Item" icon={<FaTrash />} onClick={() => removeItem(index)} />
+              <IconButton aria-label="Remove Item" icon={<FaTrash />} onClick={() => removeItem(index)} bg="brand.600" color="white" />
             </HStack>
           ))}
         </VStack>
